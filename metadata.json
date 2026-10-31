@@ -1,0 +1,6 @@
+{
+  "name": "App MME",
+  "description": "Sistema de agendamento e cadastro de ciclos Iniciar, P1, P2 e Aresta com painel administrativo e controle de agenda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

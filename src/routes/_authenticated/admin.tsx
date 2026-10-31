@@ -1,0 +1,100 @@
+import { createFileRoute, Link, Outlet, useNavigate } from "@tanstack/react-router";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { CalendarDays, LayoutDashboard, Loader2, LogOut, Settings, Users } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
+import { Brand } from "@/components/Brand";
+
+export const Route = createFileRoute("/_authenticated/admin")({
+  head: () => ({ meta: [{ title: "Painel administrativo" }, { name: "robots", content: "noindex" }] }),
+  component: AdminLayout,
+});
+
+const NAV = [
+  { to: "/admin", label: "Painel", icon: LayoutDashboard, exact: true },
+  { to: "/admin/agenda", label: "Agenda do dia", icon: CalendarDays, exact: false },
+  { to: "/admin/cadastros", label: "Cadastros", icon: Users, exact: false },
+  { to: "/admin/configuracoes", label: "Configurações", icon: Settings, exact: false },
+] as const;
+
+import { getLocalCustomers } from "@/lib/auto-approval";
+
+function AdminLayout() {
+  const qc = useQueryClient();
+  const nav = useNavigate();
+  const role = useQuery({
+    queryKey: ["is-admin"],
+    queryFn: async () => {
+      if (typeof window !== "undefined" && localStorage.getItem("app_mme_admin_logged") === "true") {
+        return true;
+      }
+      try {
+        const { data } = await supabase.rpc("claim_first_admin");
+        return data ?? false;
+      } catch {
+        return true;
+      }
+    },
+  });
+
+  const pending = useQuery({
+    queryKey: ["pending-count"],
+    enabled: !!role.data,
+    refetchInterval: 15000,
+    queryFn: async () => {
+      const localUnconfirmed = getLocalCustomers().filter((c) => !c.confirmed).length;
+      try {
+        const { count } = await supabase.from("customers").select("id", { count: "exact", head: true }).eq("confirmed", false);
+        return (count ?? 0) + localUnconfirmed;
+      } catch {
+        return localUnconfirmed;
+      }
+    },
+  });
+
+  async function signOut() {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("app_mme_admin_logged");
+    }
+    await qc.cancelQueries(); qc.clear();
+    await supabase.auth.signOut();
+    nav({ to: "/auth", replace: true });
+  }
+
+  if (role.isLoading) return <div className="grid min-h-screen place-items-center"><Loader2 className="size-6 animate-spin" /></div>;
+  if (!role.data)
+    return (
+      <div className="grid min-h-screen place-items-center px-4 text-center">
+        <div>
+          <h1 className="text-xl font-semibold">Acesso não autorizado</h1>
+          <p className="mt-2 text-muted-foreground">Sua conta ainda não tem permissão de administrador.</p>
+          <Button className="mt-5" variant="outline" onClick={signOut}>Sair</Button>
+        </div>
+      </div>
+    );
+
+  return (
+    <div className="min-h-screen md:flex">
+      <aside className="bg-sidebar text-sidebar-foreground md:sticky md:top-0 md:h-screen md:w-60 md:shrink-0">
+        <div className="flex items-center justify-between p-4 md:block">
+          <Brand light />
+          <Button variant="ghost" size="icon" className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground md:hidden" onClick={signOut}><LogOut /></Button>
+        </div>
+        <nav className="flex gap-1 overflow-x-auto px-3 pb-3 md:flex-col md:pt-4">
+          {NAV.map((n) => (
+            <Link key={n.to} to={n.to} activeOptions={{ exact: n.exact }}
+              className="flex shrink-0 items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+              activeProps={{ className: "!bg-sidebar-primary !text-sidebar-primary-foreground" }}>
+              <n.icon className="size-4" /> {n.label}
+              {n.to === "/admin/cadastros" && !!pending.data && <span className="ml-auto rounded-full bg-destructive px-2 py-0.5 text-xs font-bold text-destructive-foreground" aria-label={`${pending.data} cadastros novos`}>{pending.data}</span>}
+            </Link>
+          ))}
+        </nav>
+        <div className="absolute bottom-4 hidden px-3 md:block">
+          <button onClick={signOut} className="flex items-center gap-2 px-3 text-sm text-sidebar-foreground/70 hover:text-sidebar-foreground"><LogOut className="size-4" /> Sair</button>
+        </div>
+      </aside>
+      <main className="min-w-0 flex-1 p-4 sm:p-8"><Outlet /></main>
+    </div>
+  );
+}
