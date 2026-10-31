@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { ArrowLeft, Check, CheckCircle2, Loader2, Sun, Sunset, Wallet } from "lucide-react";
+import { ArrowLeft, Check, CheckCircle2, Download, Loader2, Sun, Sunset, Wallet } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -217,7 +217,17 @@ function BookingPage() {
       <header className="hero-band px-5 pb-16 pt-6">
         <div className="mx-auto flex max-w-2xl items-center justify-between">
           <Brand light />
-          <Link to="/admin" className="text-sm text-primary-foreground/70 hover:text-primary-foreground">Área restrita</Link>
+          <div className="flex items-center gap-3">
+            <a
+              href="/dist.zip"
+              download="dist.zip"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white shadow-sm transition hover:bg-white/30"
+              title="Baixar pasta compilada para upload manual no Netlify Drop"
+            >
+              <Download className="size-3.5" /> Baixar dist.zip
+            </a>
+            <Link to="/admin" className="text-sm text-primary-foreground/70 hover:text-primary-foreground">Área restrita</Link>
+          </div>
         </div>
         <div className="mx-auto mt-10 max-w-2xl">
           <h1 className="text-3xl font-semibold sm:text-4xl">Agende seu ciclo</h1>

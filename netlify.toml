@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   NITRO_PRESET = "netlify"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
   from = "/*"

@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-dev-runtime-D9KxULS5.js";import{S as t}from"./index-Cx5tHUL3.js";var n=e(),r=`/app/applet/src/routes/_authenticated/route.tsx?tsr-split=component`,i=()=>(0,n.jsxDEV)(t,{},void 0,!1,{fileName:r,lineNumber:2,columnNumber:30},void 0);export{i as component};
