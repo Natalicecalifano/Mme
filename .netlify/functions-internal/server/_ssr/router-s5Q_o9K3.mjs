@@ -1,12 +1,12 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { G as redirect, _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, x as useRouter, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { r as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DHvSptam.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-s5Q_o9K3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var styles_default = "/assets/styles-DrJ4dndO.css";
@@ -280,7 +280,7 @@ function RootComponent() {
 		columnNumber: 5
 	}, this);
 }
-var $$splitComponentImporter$7 = () => import("./routes-CxrupjGs.mjs");
+var $$splitComponentImporter$7 = () => import("./routes-ih1dFdcW.mjs");
 var Route$7 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Agende seu ciclo — App MME" },
@@ -321,7 +321,7 @@ var Route$6 = createFileRoute("/_authenticated")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./auth-QOXoPjXN.mjs");
+var $$splitComponentImporter$5 = () => import("./auth-DLtMg2vG.mjs");
 var Route$5 = createFileRoute("/auth")({
 	head: () => ({ meta: [
 		{ title: "Entrar — Área administrativa" },
@@ -344,7 +344,7 @@ var Route$5 = createFileRoute("/auth")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./admin-C4Tiw-1U.mjs");
+var $$splitComponentImporter$4 = () => import("./admin-YYc9Q4nP.mjs");
 var Route$4 = createFileRoute("/_authenticated/admin")({
 	head: () => ({ meta: [{ title: "Painel administrativo" }, {
 		name: "robots",
@@ -352,11 +352,11 @@ var Route$4 = createFileRoute("/_authenticated/admin")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./admin.index-DbM0DeRU.mjs");
+var $$splitComponentImporter$3 = () => import("./admin.index-BxJrDthc.mjs");
 var Route$3 = createFileRoute("/_authenticated/admin/")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./admin.agenda-8HnL8JMp.mjs");
+var $$splitComponentImporter$2 = () => import("./admin.agenda-DPFzvidI.mjs");
 var Route$2 = createFileRoute("/_authenticated/admin/agenda")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin.cadastros-9Ot9cK_9.mjs");
+var $$splitComponentImporter$1 = () => import("./admin.cadastros-Cf7Zeqrg.mjs");
 var Route$1 = createFileRoute("/_authenticated/admin/cadastros")({
 	head: () => ({ meta: [{ title: "Cadastros — Painel MME" }, {
 		name: "robots",
@@ -364,7 +364,7 @@ var Route$1 = createFileRoute("/_authenticated/admin/cadastros")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./admin.configuracoes-NNQY0Twa.mjs");
+var $$splitComponentImporter = () => import("./admin.configuracoes-yjqSrh4t.mjs");
 var Route = createFileRoute("/_authenticated/admin/configuracoes")({
 	head: () => ({ meta: [
 		{ title: "Agenda e configurações — App MME" },

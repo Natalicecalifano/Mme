@@ -1,5 +1,5 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { l as updateLocalBookingStatus, o as saveLocalCustomer, r as getAutoApproveSetting, t as createLocalBookings } from "./auto-approval-C_3_hpbe.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
@@ -13,7 +13,7 @@ import { n as toast } from "../_libs/sonner.mjs";
 import { t as Input } from "./input-Bi36govA.mjs";
 import { t as Label } from "./label-8xz9aKVd.mjs";
 import { n as objectType, r as stringType, t as literalType } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CxrupjGs.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-ih1dFdcW.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/app/applet/src/routes/index.tsx?tsr-split=component";

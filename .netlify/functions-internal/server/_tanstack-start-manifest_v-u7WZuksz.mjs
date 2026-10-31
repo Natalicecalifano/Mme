@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-B92a7t8C.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-u7WZuksz.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/app/applet/src/routes/__root.tsx",
@@ -7,19 +7,19 @@ var tsrStartManifest = () => ({ routes: {
 			"/_authenticated",
 			"/auth"
 		],
-		preloads: ["/assets/index-D0n-EBeS.js", "/assets/jsx-dev-runtime-BPvUG5k_.js"],
+		preloads: ["/assets/index-DjtkQzix.js", "/assets/jsx-dev-runtime-BPvUG5k_.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-D0n-EBeS.js"
+			src: "/assets/index-DjtkQzix.js"
 		} }]
 	},
 	"/": {
 		filePath: "/app/applet/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-BAWSPsMk.js",
-			"/assets/auto-approval-Ben-06L_.js",
+			"/assets/routes-Bdfokbxa.js",
+			"/assets/auto-approval-zBT-WId9.js",
 			"/assets/utils-BjWAYmQq.js",
 			"/assets/Brand-C6Sc0MSh.js",
 			"/assets/check-BX6Jns1A.js",
@@ -27,24 +27,24 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/button-Bw2-vqxK.js",
 			"/assets/booking-C5IxCcrb.js",
 			"/assets/input-BZFx4lOl.js",
-			"/assets/label-FuRjTpSV.js"
+			"/assets/label-VygHT2DB.js"
 		]
 	},
 	"/_authenticated": {
 		filePath: "/app/applet/src/routes/_authenticated/route.tsx",
 		children: ["/_authenticated/admin"],
-		preloads: ["/assets/route-LiW9H1RA.js"]
+		preloads: ["/assets/route-BBgaXEKU.js"]
 	},
 	"/auth": {
 		filePath: "/app/applet/src/routes/auth.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/auth-yN8r1n_R.js",
+			"/assets/auth-CMZhKoaz.js",
 			"/assets/Brand-C6Sc0MSh.js",
 			"/assets/loader-circle-CeigbqTi.js",
 			"/assets/button-Bw2-vqxK.js",
 			"/assets/input-BZFx4lOl.js",
-			"/assets/label-FuRjTpSV.js"
+			"/assets/label-VygHT2DB.js"
 		]
 	},
 	"/_authenticated/admin": {
@@ -56,8 +56,8 @@ var tsrStartManifest = () => ({ routes: {
 			"/_authenticated/admin/"
 		],
 		preloads: [
-			"/assets/admin-CSB3pnQB.js",
-			"/assets/auto-approval-Ben-06L_.js",
+			"/assets/admin-BqpiHCVf.js",
+			"/assets/auto-approval-zBT-WId9.js",
 			"/assets/utils-BjWAYmQq.js",
 			"/assets/Brand-C6Sc0MSh.js",
 			"/assets/loader-circle-CeigbqTi.js",
@@ -68,8 +68,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/app/applet/src/routes/_authenticated/admin.agenda.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin.agenda-ikDtVZcH.js",
-			"/assets/admin-queries-B9NFNd7S.js",
+			"/assets/admin.agenda-CYR6kGhu.js",
+			"/assets/admin-queries-Bqt11M5W.js",
 			"/assets/phone-Bs2zDugy.js",
 			"/assets/booking-C5IxCcrb.js"
 		]
@@ -78,8 +78,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/app/applet/src/routes/_authenticated/admin.cadastros.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin.cadastros-BKMAt0zG.js",
-			"/assets/useMutation-BUIxMd9z.js",
+			"/assets/admin.cadastros-D8uuRfU-.js",
+			"/assets/useMutation-B9e6ALVO.js",
 			"/assets/check-BX6Jns1A.js",
 			"/assets/phone-Bs2zDugy.js",
 			"/assets/trash-2-B2dgxWqh.js",
@@ -91,21 +91,21 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/app/applet/src/routes/_authenticated/admin.configuracoes.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin.configuracoes-Cf8tXPEZ.js",
+			"/assets/admin.configuracoes-Cgj0237u.js",
 			"/assets/trash-2-B2dgxWqh.js",
 			"/assets/dist-CLNOzJCM.js",
-			"/assets/dist-DRNgePZj.js",
+			"/assets/dist-Bb5g_I4u.js",
 			"/assets/booking-C5IxCcrb.js",
 			"/assets/input-BZFx4lOl.js",
-			"/assets/label-FuRjTpSV.js"
+			"/assets/label-VygHT2DB.js"
 		]
 	},
 	"/_authenticated/admin/": {
 		filePath: "/app/applet/src/routes/_authenticated/admin.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin.index-CYv9v_Eo.js",
-			"/assets/admin-queries-B9NFNd7S.js",
+			"/assets/admin.index-CkQqAn-B.js",
+			"/assets/admin-queries-Bqt11M5W.js",
 			"/assets/booking-C5IxCcrb.js",
 			"/assets/input-BZFx4lOl.js"
 		]

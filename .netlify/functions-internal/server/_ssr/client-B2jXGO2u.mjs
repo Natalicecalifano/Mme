@@ -1,5 +1,5 @@
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/client-DswBbBxu.js
+//#region node_modules/.nitro/vite/services/ssr/assets/client-B2jXGO2u.js
 var RESULT = "lovable-preview-auth:result";
 function readBrokerReply(data, requestId) {
 	if (typeof data !== "object" || data === null) return null;
@@ -132,10 +132,7 @@ function createSupabaseClient() {
 		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
 		"TSS_INLINE_CSS_ENABLED": "false",
 		"TSS_ROUTER_BASEPATH": "",
-		"TSS_SERVER_FN_BASE": "/_serverFn/",
-		"VITE_SUPABASE_PROJECT_ID": "pqtxydzzptpumymwfmun",
-		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_NKYay18F18BPREQf8sUycg_H0NoqsVY",
-		"VITE_SUPABASE_URL": "https://c--96a7f802-55c8-4feb-84a2-2cbd5abadcd3-prod.lovable.cloud"
+		"TSS_SERVER_FN_BASE": "/_serverFn/"
 	}["VITE_SUPABASE_URL"] || process.env["SUPABASE_URL"] || "https://c--96a7f802-55c8-4feb-84a2-2cbd5abadcd3-prod.lovable.cloud";
 	const SUPABASE_PUBLISHABLE_KEY = {
 		"BASE_URL": "/",
@@ -149,10 +146,7 @@ function createSupabaseClient() {
 		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
 		"TSS_INLINE_CSS_ENABLED": "false",
 		"TSS_ROUTER_BASEPATH": "",
-		"TSS_SERVER_FN_BASE": "/_serverFn/",
-		"VITE_SUPABASE_PROJECT_ID": "pqtxydzzptpumymwfmun",
-		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_NKYay18F18BPREQf8sUycg_H0NoqsVY",
-		"VITE_SUPABASE_URL": "https://c--96a7f802-55c8-4feb-84a2-2cbd5abadcd3-prod.lovable.cloud"
+		"TSS_SERVER_FN_BASE": "/_serverFn/"
 	}["VITE_SUPABASE_PUBLISHABLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"] || "sb_publishable_NKYay18F18BPREQf8sUycg_H0NoqsVY";
 	if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
 		const message = `Missing Supabase environment variable(s): ${[...!SUPABASE_URL ? ["SUPABASE_URL"] : [], ...!SUPABASE_PUBLISHABLE_KEY ? ["SUPABASE_PUBLISHABLE_KEY"] : []].join(", ")}. Connect Supabase in Lovable Cloud.`;

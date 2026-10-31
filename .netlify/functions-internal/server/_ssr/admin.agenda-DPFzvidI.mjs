@@ -1,5 +1,5 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { c as updateLocalBookingCycle } from "./auto-approval-C_3_hpbe.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
@@ -8,8 +8,8 @@ import { _ as ChevronLeft, g as ChevronRight, l as Phone } from "../_libs/lucide
 import { i as useQueryClient } from "../_libs/tanstack__react-query.mjs";
 import { d as hhmm, l as fmtDate, n as FORMAT_LABEL, o as addDays, p as maskPhone, v as todayISO } from "./booking-fSYmPQ0r.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as useDayBookings, t as QuickStatus } from "./admin-queries-C8NmXx1Y.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin.agenda-8HnL8JMp.js
+import { c as useDayBookings, t as QuickStatus } from "./admin-queries-D7m6lBfg.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin.agenda-DPFzvidI.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/app/applet/src/routes/_authenticated/admin.agenda.tsx?tsr-split=component";

@@ -1,4 +1,4 @@
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { a as getLocalCustomers } from "./auto-approval-C_3_hpbe.mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { t as Button } from "./button-8n41GpW2.mjs";
@@ -6,7 +6,7 @@ import { d as LogOut, f as LoaderCircle, n as Users, o as Settings, p as LayoutD
 import { t as Brand } from "./Brand-C4ZcmlYR.mjs";
 import { b as useNavigate, h as Outlet, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { i as useQueryClient, n as useQuery } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-C4Tiw-1U.js
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-YYc9Q4nP.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/app/applet/src/routes/_authenticated/admin.tsx?tsr-split=component";
 var NAV = [

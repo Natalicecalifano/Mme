@@ -1,5 +1,5 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { t as Button } from "./button-8n41GpW2.mjs";
@@ -9,7 +9,7 @@ import { b as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
 import { t as Input } from "./input-Bi36govA.mjs";
 import { t as Label } from "./label-8xz9aKVd.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/auth-QOXoPjXN.js
+//#region node_modules/.nitro/vite/services/ssr/assets/auth-DLtMg2vG.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/app/applet/src/routes/auth.tsx?tsr-split=component";

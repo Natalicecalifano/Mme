@@ -1,5 +1,5 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { r as getAutoApproveSetting, s as setAutoApproveSetting } from "./auto-approval-C_3_hpbe.mjs";
 import { t as cn } from "./utils-C_uf36nf.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
@@ -12,7 +12,7 @@ import { n as toast } from "../_libs/sonner.mjs";
 import { t as Input } from "./input-Bi36govA.mjs";
 import { t as Label } from "./label-8xz9aKVd.mjs";
 import { n as SwitchThumb, t as Switch$1 } from "../_libs/radix-ui__react-switch.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin.configuracoes-NNQY0Twa.js
+//#region node_modules/.nitro/vite/services/ssr/assets/admin.configuracoes-yjqSrh4t.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName$3 = "/app/applet/src/components/ui/switch.tsx";

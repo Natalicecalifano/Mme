@@ -1,5 +1,5 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { t as supabase } from "./client-DswBbBxu.mjs";
+import { t as supabase } from "./client-B2jXGO2u.mjs";
 import { a as getLocalCustomers, n as deleteLocalCustomer, u as updateLocalCustomer } from "./auto-approval-C_3_hpbe.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
@@ -9,7 +9,7 @@ import { i as useQueryClient, n as useQuery, t as useMutation } from "../_libs/t
 import { l as fmtDate, p as maskPhone, t as CYCLES } from "./booking-fSYmPQ0r.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
 import { t as Input } from "./input-Bi36govA.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin.cadastros-9Ot9cK_9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/admin.cadastros-Cf7Zeqrg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/app/applet/src/routes/_authenticated/admin.cadastros.tsx?tsr-split=component";
