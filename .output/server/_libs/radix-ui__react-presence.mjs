@@ -1,6 +1,6 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { n as useLayoutEffect2 } from "./@radix-ui/react-collection+[...].mjs";
+import { n as useLayoutEffect2 } from "./@radix-ui/react-id+[...].mjs";
 //#region node_modules/@radix-ui/react-presence/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var __defProp = Object.defineProperty;

@@ -1,7 +1,7 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { h as useControllableState } from "./@radix-ui/react-select+[...].mjs";
 import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { i as require_jsx_runtime, r as createContextScope, s as useComposedRefs } from "./@radix-ui/react-collection+[...].mjs";
+import { n as createContextScope, o as useComposedRefs, r as require_jsx_runtime } from "./@radix-ui/react-collection+[...].mjs";
 import { t as composeEventHandlers } from "./radix-ui__primitive.mjs";
 import { r as Primitive } from "./@radix-ui/react-dismissable-layer+[...].mjs";
 import { a as useSize } from "./@radix-ui/react-popper+[...].mjs";
@@ -26,7 +26,8 @@ function SwitchProvider(props) {
 	});
 	const [control, setControl] = import_react.useState(null);
 	const [bubbleInput, setBubbleInput] = import_react.useState(null);
-	const [userClick, setUserClick] = import_react.useState(null);
+	const hasConsumerStoppedPropagationRef = import_react.useRef(false);
+	const [userInteractionCount, onUserInteraction] = import_react.useReducer((count) => count + 1, 0);
 	const context = {
 		checked,
 		setChecked,
@@ -36,8 +37,9 @@ function SwitchProvider(props) {
 		name,
 		form,
 		value,
-		userClick,
-		onUserClick: setUserClick,
+		hasConsumerStoppedPropagationRef,
+		userInteractionCount,
+		onUserInteraction,
 		required,
 		defaultChecked,
 		isFormControl: control ? !!form || !!control.closest("form") : true,
@@ -53,7 +55,7 @@ function SwitchProvider(props) {
 __name(SwitchProvider, "SwitchProvider");
 var TRIGGER_NAME = "SwitchTrigger";
 var SwitchTrigger = /* @__PURE__ */ import_react.forwardRef(/* @__PURE__ */ __name(function SwitchTrigger2({ __scopeSwitch, onClick, ...switchProps }, forwardedRef) {
-	const { control, form, value, disabled, checked, required, setControl, setChecked, onUserClick, isFormControl, bubbleInput } = useSwitchContext(TRIGGER_NAME, __scopeSwitch);
+	const { control, form, value, disabled, checked, required, setControl, setChecked, hasConsumerStoppedPropagationRef, onUserInteraction, isFormControl, bubbleInput } = useSwitchContext(TRIGGER_NAME, __scopeSwitch);
 	const composedRefs = useComposedRefs(forwardedRef, setControl);
 	const initialCheckedStateRef = import_react.useRef(checked);
 	import_react.useEffect(() => {
@@ -80,14 +82,11 @@ var SwitchTrigger = /* @__PURE__ */ import_react.forwardRef(/* @__PURE__ */ __na
 		...switchProps,
 		ref: composedRefs,
 		onClick: composeEventHandlers(onClick, (event) => {
-			const hasConsumerStoppedPropagation = event.isPropagationStopped();
-			onUserClick({
-				requestedChecked: !checked,
-				hasConsumerStoppedPropagation
-			});
+			onUserInteraction();
 			setChecked((prevChecked) => !prevChecked);
 			if (bubbleInput && isFormControl) {
-				if (!hasConsumerStoppedPropagation) event.stopPropagation();
+				hasConsumerStoppedPropagationRef.current = event.isPropagationStopped();
+				if (!hasConsumerStoppedPropagationRef.current) event.stopPropagation();
 			}
 		})
 	});
@@ -124,40 +123,34 @@ var SwitchThumb = /* @__PURE__ */ import_react.forwardRef(/* @__PURE__ */ __name
 }, "SwitchThumb"));
 var BUBBLE_INPUT_NAME = "SwitchBubbleInput";
 var SwitchBubbleInput = /* @__PURE__ */ import_react.forwardRef(/* @__PURE__ */ __name(function SwitchBubbleInput2({ __scopeSwitch, onClick, ...props }, forwardedRef) {
-	const { control, userClick, checked, defaultChecked, required, disabled, name, value, form, bubbleInput, setBubbleInput } = useSwitchContext(BUBBLE_INPUT_NAME, __scopeSwitch);
+	const { control, hasConsumerStoppedPropagationRef, userInteractionCount, checked, defaultChecked, required, disabled, name, value, form, bubbleInput, setBubbleInput } = useSwitchContext(BUBBLE_INPUT_NAME, __scopeSwitch);
 	const composedRefs = useComposedRefs(forwardedRef, setBubbleInput);
 	const controlSize = useSize(control);
 	const shouldStopClickPropagationRef = import_react.useRef(false);
 	const prevCheckedRef = import_react.useRef(checked);
-	const handledUserClickRef = import_react.useRef(userClick);
-	const pendingUserClickRef = import_react.useRef(null);
+	const prevUserInteractionCountRef = import_react.useRef(userInteractionCount);
 	import_react.useEffect(() => {
 		const input = bubbleInput;
 		if (!input) return;
 		const inputProto = window.HTMLInputElement.prototype;
 		const setChecked = Object.getOwnPropertyDescriptor(inputProto, "checked").set;
-		if (!setChecked) return;
+		const isUserInteraction = userInteractionCount !== prevUserInteractionCountRef.current;
+		prevUserInteractionCountRef.current = userInteractionCount;
 		const checkedChanged = prevCheckedRef.current !== checked;
 		prevCheckedRef.current = checked;
-		const isNewUserClick = userClick !== null && userClick !== handledUserClickRef.current;
-		handledUserClickRef.current = userClick;
-		if (isNewUserClick) {
-			pendingUserClickRef.current = checkedChanged ? null : userClick;
-			if (checkedChanged) setChecked.call(input, checked);
-			input.dispatchEvent(new Event("click", { bubbles: !userClick.hasConsumerStoppedPropagation }));
-		} else if (checkedChanged) {
-			const pendingUserClick = pendingUserClickRef.current;
-			pendingUserClickRef.current = null;
-			const isPendingUserChange = pendingUserClick?.requestedChecked === checked;
-			shouldStopClickPropagationRef.current = true;
+		const bubbles = !(isUserInteraction && hasConsumerStoppedPropagationRef.current);
+		if (checkedChanged && setChecked) {
+			shouldStopClickPropagationRef.current = !isUserInteraction;
+			const event = new Event("click", { bubbles });
 			setChecked.call(input, checked);
-			input.dispatchEvent(new Event("click", { bubbles: !(isPendingUserChange && pendingUserClick.hasConsumerStoppedPropagation) }));
+			input.dispatchEvent(event);
 			shouldStopClickPropagationRef.current = false;
 		}
 	}, [
 		bubbleInput,
 		checked,
-		userClick
+		hasConsumerStoppedPropagationRef,
+		userInteractionCount
 	]);
 	const defaultCheckedRef = import_react.useRef(checked);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.input, {

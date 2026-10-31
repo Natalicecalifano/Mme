@@ -1,6 +1,6 @@
 import { _ as __rest } from "./@radix-ui/react-select+[...].mjs";
 //#region node_modules/@supabase/auth-js/dist/module/lib/version.js
-var version = "2.118.0";
+var version = "2.117.2";
 //#endregion
 //#region node_modules/@supabase/auth-js/dist/module/lib/constants.js
 /** Current session will be checked for refresh at this interval. */

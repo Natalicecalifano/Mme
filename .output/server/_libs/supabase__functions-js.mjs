@@ -290,7 +290,7 @@ var FunctionsClient = class {
 				let body;
 				const hasContentTypeHeader = !!headers && Object.keys(headers).some((key) => key.toLowerCase() === "content-type");
 				if (functionArgs && !hasContentTypeHeader) if (typeof Blob !== "undefined" && functionArgs instanceof Blob || functionArgs instanceof ArrayBuffer) {
-					_headers["Content-Type"] = functionArgs.type || "application/octet-stream";
+					_headers["Content-Type"] = "application/octet-stream";
 					body = functionArgs;
 				} else if (typeof functionArgs === "string") {
 					_headers["Content-Type"] = "text/plain";

@@ -34,7 +34,7 @@ var HookableCore = class {
 	callHook(name, ...args) {
 		const hooks = this._hooks[name];
 		if (!hooks || hooks.length === 0) return;
-		return callHooks(hooks.slice(), args, 0);
+		return callHooks(hooks, args, 0);
 	}
 };
 //#endregion

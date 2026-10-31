@@ -3,7 +3,7 @@ import { t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as cn } from "./utils-C_uf36nf.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
-import { a as Slot } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { i as Slot } from "../_libs/@radix-ui/react-collection+[...].mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/button-8n41GpW2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();

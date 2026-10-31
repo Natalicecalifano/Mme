@@ -1,7 +1,8 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { l as require_react_dom, u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { i as require_jsx_runtime, n as useLayoutEffect2 } from "./@radix-ui/react-collection+[...].mjs";
+import { r as require_jsx_runtime } from "./@radix-ui/react-collection+[...].mjs";
 import { r as Primitive } from "./@radix-ui/react-dismissable-layer+[...].mjs";
+import { n as useLayoutEffect2 } from "./@radix-ui/react-id+[...].mjs";
 //#region node_modules/@radix-ui/react-portal/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var import_react_dom = /* @__PURE__ */ __toESM(require_react_dom(), 1);

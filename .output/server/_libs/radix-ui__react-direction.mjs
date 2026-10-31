@@ -1,6 +1,6 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { i as require_jsx_runtime } from "./@radix-ui/react-collection+[...].mjs";
+import { r as require_jsx_runtime } from "./@radix-ui/react-collection+[...].mjs";
 //#region node_modules/@radix-ui/react-direction/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 require_jsx_runtime();
@@ -9,14 +9,10 @@ var __name = (target, value) => __defProp(target, "name", {
 	value,
 	configurable: true
 });
-var Direction = {
-	LTR: "ltr",
-	RTL: "rtl"
-};
 var DirectionContext = import_react.createContext(void 0);
 function useDirection(localDir) {
 	const globalDir = import_react.useContext(DirectionContext);
-	return localDir || globalDir || Direction.LTR;
+	return localDir || globalDir || "ltr";
 }
 __name(useDirection, "useDirection");
 //#endregion
