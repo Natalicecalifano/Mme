@@ -6,6 +6,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Build the SSR server as a Netlify Function (publishes static assets to dist/).
+  nitro: { preset: "netlify" },
   vite: {
     server: {
       port: 3000,
